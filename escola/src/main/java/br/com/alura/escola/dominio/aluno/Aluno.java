@@ -3,6 +3,7 @@ package br.com.alura.escola.dominio.aluno;
 import java.util.ArrayList;
 import java.util.List;
 
+//AGGREATE ROOT (Classe Principal, raiz...)
 public class Aluno {
 
     // entidade: classe que tenha algum atributo que identifique o objeto nesse caso o br.com.alura.escola.aluno.CPF;
@@ -23,6 +24,9 @@ public class Aluno {
     }
 
     public void adicionarTelefone(String ddd, String numero){
+        if(telefones.size() == 2){
+            throw new IllegalArgumentException("Número maximo de telefones já atigindo!");
+        }
         this.telefones.add(new Telefone(ddd, numero));
     }
 
